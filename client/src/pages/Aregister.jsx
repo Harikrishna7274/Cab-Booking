@@ -16,7 +16,7 @@ const Aregister = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/admins/register', {
+      const response = await axios.post('https://cab-booking-g8dt.onrender.com/api/admins/register', {
         username,
         email,
         password

@@ -28,13 +28,13 @@ const Uhome = () => {
       const headers = { Authorization: `Bearer ${token}` };
       
       // Fetch bookings
-      const bookingsRes = await axios.get('http://localhost:8000/api/bookings/mybookings', { headers });
+      const bookingsRes = await axios.get('https://cab-booking-g8dt.onrender.com/api/bookings/mybookings', { headers });
       if (bookingsRes.data.success) {
         setBookings(bookingsRes.data.bookings);
       }
 
       // Fetch cabs count
-      const cabsRes = await axios.get('http://localhost:8000/api/cars', { headers });
+      const cabsRes = await axios.get('https://cab-booking-g8dt.onrender.com/api/cars', { headers });
       if (cabsRes.data.success) {
         const availableCabs = cabsRes.data.cars.filter(car => car.status === 'available');
         setCabsCount(availableCabs.length);

@@ -29,7 +29,7 @@ const Acabedit = () => {
 
   const fetchCabDetails = async (token) => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/cars/${id}`, {
+      const response = await axios.get(`https://cab-booking-g8dt.onrender.com/api/cars/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) {
@@ -73,7 +73,7 @@ const Acabedit = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:8000/api/cars/${id}`,
+        `https://cab-booking-g8dt.onrender.com/api/cars/${id}`,
         formData,
         {
           headers: {
@@ -217,7 +217,7 @@ const Acabedit = () => {
                         <div>
                           <span className="text-secondary small d-block mb-1">Current Cab Image</span>
                           <img
-                            src={`http://localhost:8000/uploads/${currentImage}`}
+                            src={`https://cab-booking-g8dt.onrender.com/uploads/${currentImage}`}
                             alt="Current"
                             className="rounded object-fit-cover"
                             style={{ width: '120px', height: '80px' }}

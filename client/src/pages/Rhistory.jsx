@@ -20,7 +20,7 @@ const Rhistory = () => {
 
   const fetchHistory = async (token) => {
     try {
-      const response = await axios.get('http://localhost:8000/api/rides/rider/history', {
+      const response = await axios.get('https://cab-booking-g8dt.onrender.com/api/rides/rider/history', {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) {

@@ -21,7 +21,7 @@ const Acabs = () => {
 
   const fetchCabs = async (token) => {
     try {
-      const response = await axios.get('http://localhost:8000/api/cars', {
+      const response = await axios.get('https://cab-booking-g8dt.onrender.com/api/cars', {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) {
@@ -43,7 +43,7 @@ const Acabs = () => {
     if (!token) return;
 
     try {
-      const response = await axios.delete(`http://localhost:8000/api/cars/${id}`, {
+      const response = await axios.delete(`https://cab-booking-g8dt.onrender.com/api/cars/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) {
@@ -120,7 +120,7 @@ const Acabs = () => {
                         <div className="bg-dark rounded d-flex align-items-center justify-content-center overflow-hidden" style={{ width: '60px', height: '40px' }}>
                           {car.image ? (
                             <img
-                              src={`http://localhost:8000/uploads/${car.image}`}
+                              src={`https://cab-booking-g8dt.onrender.com/uploads/${car.image}`}
                               alt={car.name}
                               className="w-100 h-100 object-fit-cover"
                               onError={(e) => {

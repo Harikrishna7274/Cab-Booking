@@ -25,7 +25,7 @@ const UserEdit = () => {
 
   const fetchUserDetails = async (token) => {
     try {
-      const response = await axios.get('http://localhost:8000/api/admins/users', {
+      const response = await axios.get('https://cab-booking-g8dt.onrender.com/api/admins/users', {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) {
@@ -59,7 +59,7 @@ const UserEdit = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:8000/api/admins/users/${id}`,
+        `https://cab-booking-g8dt.onrender.com/api/admins/users/${id}`,
         { name, email, phone, role },
         { headers: { Authorization: `Bearer ${token}` } }
       );

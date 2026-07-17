@@ -20,7 +20,7 @@ const Mybookings = () => {
 
   const fetchMyBookings = async (token) => {
     try {
-      const response = await axios.get('http://localhost:8000/api/bookings/mybookings', {
+      const response = await axios.get('https://cab-booking-g8dt.onrender.com/api/bookings/mybookings', {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) {

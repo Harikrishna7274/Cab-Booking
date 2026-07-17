@@ -40,7 +40,7 @@ const Addcar = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/cars', formData, {
+      const response = await axios.post('https://cab-booking-g8dt.onrender.com/api/cars', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'

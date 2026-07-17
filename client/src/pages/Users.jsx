@@ -21,7 +21,7 @@ const Users = () => {
 
   const fetchUsers = async (token) => {
     try {
-      const response = await axios.get('http://localhost:8000/api/admins/users', {
+      const response = await axios.get('https://cab-booking-g8dt.onrender.com/api/admins/users', {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) {
@@ -43,7 +43,7 @@ const Users = () => {
     if (!token) return;
 
     try {
-      const response = await axios.delete(`http://localhost:8000/api/admins/users/${id}`, {
+      const response = await axios.delete(`https://cab-booking-g8dt.onrender.com/api/admins/users/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) {

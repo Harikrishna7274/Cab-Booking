@@ -36,7 +36,7 @@ const BookCab = () => {
 
   const fetchCarDetails = async (token) => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/cars/${id}`, {
+      const response = await axios.get(`https://cab-booking-g8dt.onrender.com/api/cars/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) {
@@ -62,7 +62,7 @@ const BookCab = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:8000/api/bookings/book',
+        'https://cab-booking-g8dt.onrender.com/api/bookings/book',
         {
           carId: id,
           pickupLocation: pickup,
@@ -201,7 +201,7 @@ const BookCab = () => {
                 <div style={{ height: '220px', background: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)', position: 'relative' }}>
                   {car.image ? (
                     <img
-                      src={`http://localhost:8000/uploads/${car.image}`}
+                      src={`https://cab-booking-g8dt.onrender.com/uploads/${car.image}`}
                       alt={car.name}
                       className="w-100 h-100 object-fit-cover"
                     />

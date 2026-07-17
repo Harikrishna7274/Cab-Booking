@@ -57,7 +57,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/users/register', formData, {
+      const response = await axios.post('https://cab-booking-g8dt.onrender.com/api/users/register', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
 

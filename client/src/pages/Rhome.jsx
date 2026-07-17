@@ -29,7 +29,7 @@ const Rhome = () => {
       const headers = { Authorization: `Bearer ${token}` };
 
       // 1. Fetch rider history
-      const historyRes = await axios.get('http://localhost:8000/api/rides/rider/history', { headers });
+      const historyRes = await axios.get('https://cab-booking-g8dt.onrender.com/api/rides/rider/history', { headers });
       if (historyRes.data.success) {
         const rides = historyRes.data.rides;
         setHistory(rides);
@@ -40,7 +40,7 @@ const Rhome = () => {
       }
 
       // 2. Fetch available vehicles
-      const cabsRes = await axios.get('http://localhost:8000/api/cars', { headers });
+      const cabsRes = await axios.get('https://cab-booking-g8dt.onrender.com/api/cars', { headers });
       if (cabsRes.data.success) {
         const available = cabsRes.data.cars.filter(car => car.status === 'available');
         setCabsCount(available.length);

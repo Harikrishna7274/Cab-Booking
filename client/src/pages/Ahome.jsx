@@ -45,7 +45,7 @@ const Ahome = () => {
       const headers = { Authorization: `Bearer ${token}` };
 
       // 1. Fetch users list
-      const usersRes = await axios.get('http://localhost:8000/api/admins/users', { headers });
+      const usersRes = await axios.get('https://cab-booking-g8dt.onrender.com/api/admins/users', { headers });
       let drivers = [];
       let totalRiders = 0;
       if (usersRes.data.success) {
@@ -54,11 +54,11 @@ const Ahome = () => {
       }
 
       // 2. Fetch cars
-      const carsRes = await axios.get('http://localhost:8000/api/cars', { headers });
+      const carsRes = await axios.get('https://cab-booking-g8dt.onrender.com/api/cars', { headers });
       const cabsCount = carsRes.data.success ? carsRes.data.cars.length : 0;
 
       // 3. Fetch rides
-      const ridesRes = await axios.get('http://localhost:8000/api/rides/admin/all', { headers });
+      const ridesRes = await axios.get('https://cab-booking-g8dt.onrender.com/api/rides/admin/all', { headers });
       let totalBookings = 0;
       let activeBookings = 0;
       let completedBookings = 0;

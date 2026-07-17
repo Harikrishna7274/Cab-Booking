@@ -83,7 +83,7 @@ const RideTracking = () => {
 
   const fetchRideDetails = async (token) => {
     try {
-      const response = await axios.get('http://localhost:8000/api/rides/rider/history', {
+      const response = await axios.get('https://cab-booking-g8dt.onrender.com/api/rides/rider/history', {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) {
@@ -159,7 +159,7 @@ const RideTracking = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:8000/api/rides/pay',
+        'https://cab-booking-g8dt.onrender.com/api/rides/pay',
         { rideId: ride._id, amount: ride.fare, paymentMethod: 'Cashless Card' },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -188,7 +188,7 @@ const RideTracking = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:8000/api/rides/rate',
+        'https://cab-booking-g8dt.onrender.com/api/rides/rate',
         {
           rideId: ride._id,
           driverId: ride.driverId?._id || ride.driverId,

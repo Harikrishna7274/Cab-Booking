@@ -21,7 +21,7 @@ const Bookings = () => {
 
   const fetchBookings = async (token) => {
     try {
-      const response = await axios.get('http://localhost:8000/api/rides/admin/all', {
+      const response = await axios.get('https://cab-booking-g8dt.onrender.com/api/rides/admin/all', {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) {
@@ -46,7 +46,7 @@ const Bookings = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:8000/api/rides/admin/status/${id}`,
+        `https://cab-booking-g8dt.onrender.com/api/rides/admin/status/${id}`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );

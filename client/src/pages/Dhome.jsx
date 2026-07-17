@@ -83,7 +83,7 @@ const Dhome = () => {
       const headers = { Authorization: `Bearer ${token}` };
       
       // Fetch driver history
-      const historyRes = await axios.get('http://localhost:8000/api/rides/driver/history', { headers });
+      const historyRes = await axios.get('https://cab-booking-g8dt.onrender.com/api/rides/driver/history', { headers });
       if (historyRes.data.success) {
         const rides = historyRes.data.rides;
         setHistory(rides);
@@ -106,7 +106,7 @@ const Dhome = () => {
 
     try {
       // Re-fetch history to sync active ride state in case rider completed payment/feedback
-      const historyRes = await axios.get('http://localhost:8000/api/rides/driver/history', { headers });
+      const historyRes = await axios.get('https://cab-booking-g8dt.onrender.com/api/rides/driver/history', { headers });
       if (historyRes.data.success) {
         const rides = historyRes.data.rides;
         setHistory(rides);
@@ -115,7 +115,7 @@ const Dhome = () => {
       }
 
       if (isOnline && !activeRide) {
-        const pendingRes = await axios.get('http://localhost:8000/api/rides/pending', { headers });
+        const pendingRes = await axios.get('https://cab-booking-g8dt.onrender.com/api/rides/pending', { headers });
         if (pendingRes.data.success) {
           const pending = pendingRes.data.rides;
           setPendingRides(pending);
@@ -141,7 +141,7 @@ const Dhome = () => {
 
     try {
       const response = await axios.put(
-        'http://localhost:8000/api/users/availability',
+        'https://cab-booking-g8dt.onrender.com/api/users/availability',
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -168,7 +168,7 @@ const Dhome = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:8000/api/rides/accept/${id}`,
+        `https://cab-booking-g8dt.onrender.com/api/rides/accept/${id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -192,7 +192,7 @@ const Dhome = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:8000/api/rides/start/${id}`,
+        `https://cab-booking-g8dt.onrender.com/api/rides/start/${id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -216,7 +216,7 @@ const Dhome = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:8000/api/rides/complete/${id}`,
+        `https://cab-booking-g8dt.onrender.com/api/rides/complete/${id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

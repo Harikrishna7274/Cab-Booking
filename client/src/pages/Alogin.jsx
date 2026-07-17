@@ -15,7 +15,7 @@ const Alogin = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/admins/login', { email, password });
+      const response = await axios.post('https://cab-booking-g8dt.onrender.com/api/admins/login', { email, password });
       
       if (response.data.success) {
         localStorage.setItem('adminToken', response.data.token);
