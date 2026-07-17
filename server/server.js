@@ -14,8 +14,15 @@ const app = express();
 // Connect to MongoDB
 connectDB();
 
-// Express Middleware
-app.use(cors());
+// Configure CORS
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://cab-booking-client.onrender.com',
+    'https://cab-booking-client-g8dt.onrender.com'
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
